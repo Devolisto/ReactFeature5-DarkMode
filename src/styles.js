@@ -4,10 +4,17 @@ export const Description = styled.h4`
   text-align: center;
 `;
 
+// export const GlobalStyle = createGlobalStyle`
+//   body {
+//     color: ${(props) => props.theme.black};
+//     background-color: ${(props) => props.theme.white}
+//   }
+// `;
+
 export const GlobalStyle = createGlobalStyle`
   body {
-    color: ${(props) => props.theme.black};
-    background-color: ${(props) => props.theme.white}
+    color: ${(props) => props.theme.mainColor};
+    background-color: ${(props) => props.theme.backgroundColor}
   }
 `;
 
