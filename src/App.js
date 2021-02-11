@@ -23,26 +23,36 @@ const theme = {
 };
 
 function App() {
-
+  
   // let currentTheme = useState(theme.light);
 
-  const [currentTheme, setCurrentTheme] = useState(theme.light);
+  // const [currentTheme, setCurrentTheme] = useState(theme.light);
+  const [currentTheme, setCurrentTheme] = useState("light");
 
   const toggleCurrentTheme = (currentTheme) => {
-    if (currentTheme = theme.light) {
-      setCurrentTheme(currentTheme = theme.dark);
-      currentTheme = theme.dark;
-      console.log("changed to dark")
-    } 
-    else if (currentTheme = theme.dark) {
-      setCurrentTheme(currentTheme = theme.light);
-      console.log("changed to light");
+
+    if(currentTheme === "dark") {
+      setCurrentTheme("light");
+    } else {
+      setCurrentTheme("dark");
     }
+
+    // setCurrentTheme(currentTheme === "light" ? "dark" : "light");
+
+    // if (currentTheme = theme.light) {
+    //   setCurrentTheme(currentTheme = theme.dark);
+    //   currentTheme = theme.dark;
+    //   console.log("changed to dark")
+    // } 
+    // else if (currentTheme = theme.dark) {
+    //   setCurrentTheme(currentTheme = theme.light);
+    //   console.log("changed to light");
+    // }
   }
   return (
-    <ThemeProvider theme={currentTheme}>
+    <ThemeProvider theme={theme[currentTheme]}>
       <GlobalStyle />
-      <ThemeButton onClick={() => toggleCurrentTheme(currentTheme)}>
+      <ThemeButton onClick={toggleCurrentTheme}>
         Dark Theme
       </ThemeButton>
       <Home />
